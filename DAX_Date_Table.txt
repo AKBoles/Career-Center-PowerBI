@@ -1,0 +1,23 @@
+Date = 
+VAR _startYear = 2019
+VAR _endYear = 2024
+VAR _calendar = 
+    CALENDAR(
+        DATE(_startYear, 1, 1),
+        DATE(_endYear, 12, 31)
+    )
+RETURN
+    ADDCOLUMNS(
+        _calendar,
+        "Year", YEAR([Date]),
+        "MonthNumber", MONTH([Date]),
+        "Month", FORMAT([Date], "mmmm"),
+        "QuarterNumber", FORMAT([Date], "Q"),
+        "Quarter", "Q " & FORMAT([Date], "Q"),
+        "Month Year", FORMAT([Date], "mmm yyyy"),
+        "Day of Week", WEEKDAY([Date]),
+        "WeekNumber", WEEKNUM([Date]),
+        "SemesterNumber", IF(MONTH([Date]) < 6, 1, IF(MONTH([Date]) < 8, 2, 3)),
+        "Semester", IF(MONTH([Date]) < 6, "Spring", IF(MONTH([Date]) < 8, "Summer", "Fall")),
+        "Academic Year", IF(MONTH([Date]) > 6, YEAR([Date]) + 1, YEAR([Date]))
+    )

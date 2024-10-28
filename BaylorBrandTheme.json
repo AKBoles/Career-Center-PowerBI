@@ -1,0 +1,16 @@
+{
+    "name":"Baylor University Brand",
+    "dataColors": [
+                   "#154734",
+                   "#FFB81C",
+                   "#165C7D",
+                   "#5C3021",
+                   "#44693D",
+                   "#D29F13",
+                   "#006A52", 
+                   "#E0CFBD"
+                  ],
+    "background":"#EEEEEE",
+    "foreground":"#154734",
+    "tableAccent":"#FFB81C"
+}
